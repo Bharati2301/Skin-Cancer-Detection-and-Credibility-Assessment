@@ -1,4 +1,4 @@
-# SKIN_CANCER_XAI
+# Skin Cancer Detection and Credibility Assessment with Explainable AI
 Welcome to our project on enhancing the credibility of skin cancer classification using Explainable Artificial Intelligence (XAI), specifically leveraging SHAP (SHapley Additive exPlanations). This repository hosts a comprehensive analysis and implementation showcasing how deep learning models, often viewed as 'black boxes', can be made interpretable and trustworthy in the critical domain of healthcare.
 
 Skin cancer, a prevalent and potentially deadly disease, demands accurate and reliable diagnostic methods. While deep learning has significantly advanced automated skin lesion analysis, the inherent opaqueness of these models poses a challenge. Our project aims to bridge this gap by not only employing advanced neural networks for skin cancer classification but also incorporating SHAP to demystify the decision-making process of these models.
