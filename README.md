@@ -1,49 +1,110 @@
-# Skin Cancer Detection and Credibility Assessment with Explainable AI
-Welcome to our project on enhancing the credibility of skin cancer classification using Explainable Artificial Intelligence (XAI), specifically leveraging SHAP (SHapley Additive exPlanations). This repository hosts a comprehensive analysis and implementation showcasing how deep learning models, often viewed as 'black boxes', can be made interpretable and trustworthy in the critical domain of healthcare.
+## 🩺 Detection of Skin Cancer & Credibility Assessment using Explainable AI
 
-Skin cancer, a prevalent and potentially deadly disease, demands accurate and reliable diagnostic methods. While deep learning has significantly advanced automated skin lesion analysis, the inherent opaqueness of these models poses a challenge. Our project aims to bridge this gap by not only employing advanced neural networks for skin cancer classification but also incorporating SHAP to demystify the decision-making process of these models.
+### 📌 Overview
 
-Through our detailed Exploratory Data Analysis (EDA) and the application of various convolutional neural network architectures, we delve deep into the predictive mechanisms. We further enhance the project's value by employing SHAP, a cutting-edge tool in explainable AI, to interpret the model predictions. This approach provides insights into what features the models are focusing on, thereby increasing the trustworthiness and credibility of the predictions made by these AI systems.
+Skin cancer is one of the most prevalent and dangerous types of cancer worldwide. This project leverages **Deep Learning** and **Explainable AI (XAI)** techniques to build an advanced skin cancer detection system. Using **SHapley Additive exPlanations (SHAP)**, we enhance model transparency and credibility, aiding medical professionals in decision-making. 
 
-This project stands at the intersection of machine learning, healthcare, and ethics, representing our commitment to developing AI solutions that are not only powerful but also transparent and understandable.
+🔬 **Key Features:**
+- **ResNet50-based** deep learning model for **skin cancer classification**.
+- Uses **SHAP** for model interpretability and credibility assessment.
+- Trained on the **SIIM-ISIC** dataset with images and metadata (age, gender, etc.).
+- **Early detection** to improve treatment outcomes and save lives.
+- Compares multiple models (**CNN, VGG16, InceptionResNetV2, ResNet50**).
 
-Join us in exploring the fascinating world of explainable AI in skin cancer classification, where we strive to make AI decisions in healthcare more interpretable, credible, and trustworthy.
+---
 
-## Project Overview
-This project aims to analyze skin lesions using deep learning models. The primary goal is to classify skin lesions into various categories, potentially aiding in early diagnosis of skin conditions, including malignant lesions. The project involves an Exploratory Data Analysis (EDA) followed by the application of various deep learning models.
+## 💀 Project Structure
 
-## Files in the Repository
-FINAL_Skin_EDA.ipynb: Notebook containing the exploratory data analysis of the skin lesion dataset.
-FINAL_SKIN_vgg16-model.ipynb: Notebook implementing the VGG16 model for lesion classification.
-FINAL_SKIN_resnet50-model.ipynb: Notebook implementing the ResNet50 model for lesion classification.
-FINAL_SKIN_inceptionresnetv2-model.ipynb: Notebook implementing the InceptionResNetV2 model for lesion classification.
-FINAL_SKIN_second-cnn-model.ipynb: Notebook implementing a custom CNN model for lesion classification.
-FINAL_SHAP_ResNET.ipynb: Notebook for SHAP (SHapley Additive exPlanations) analysis on the ResNet model.
+```
+💽 skin_cancer_xai
+│-- 📄 README.md
+│-- 📂 dataset                # SIIM-ISIC dataset (after preprocessing)
+│-- 📂 models                 # Saved model weights and architectures
+│-- 📂 notebooks              # Jupyter notebooks for training and evaluation
+│-- 📂 src                    # Source code for model training and evaluation
+│-- 📂 reports                # Detailed research report and findings
+│-- 📂 images                 # Sample dataset images and visualization outputs
+│-- requirements.txt          # Required dependencies
+│-- train.py                  # Model training script
+│-- evaluate.py               # Model evaluation script
+│-- shap_analysis.py          # SHAP-based explainability analysis
+```
 
-## How to Run the Project
-1. Exploratory Data Analysis: Start with FINAL_Skin_EDA.ipynb to understand the dataset. This notebook provides insights into the distribution of different types of skin lesions and other relevant features in the dataset.
-Model Training and Evaluation:
-After completing the EDA, proceed to train various models. Each model is contained in its separate notebook:
-2. FINAL_SKIN_vgg16-model.ipynb
-3. FINAL_SKIN_resnet50-model.ipynb
-4. FINAL_SKIN_inceptionresnetv2-model.ipynb
-5. FINAL_SKIN_second-cnn-model.ipynb
-Run each notebook to train the respective model on the dataset. Evaluate the models based on their performance metrics.
-6. SHAP Analysis:
-Once the models are trained and evaluated, use FINAL_SHAP_ResNET.ipynb to perform SHAP analysis on the ResNet model. This will help in understanding the model's decision-making process.
+---
 
-## Requirements
-* Python 3.x
-* TensorFlow
-* Keras
-* SHAP
-* Matplotlib
-* Seaborn
-* Pandas
-* Numpy
+## 🚀 Installation & Setup
 
-## Contributors
-* Bharati Panigrahi
-* Khushi Naik
-* Tanaya Tamhankar
-* Chetan Sah
+### 1️⃣ Clone the repository
+```bash
+git clone https://github.com/infectedhuman/SKIN_CANCER_XAI.git
+cd SKIN_CANCER_XAI
+```
+
+### 2️⃣ Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 3️⃣ Run the model training
+```bash
+python train.py
+```
+
+### 4️⃣ Evaluate the model
+```bash
+python evaluate.py
+```
+
+### 5️⃣ Perform SHAP analysis
+```bash
+python shap_analysis.py
+```
+
+---
+
+## 🔍 Methodology
+
+1️⃣ **Data Preprocessing** 🪚  
+   - Dataset cleaning, balancing, and augmentation using **ImageDataGenerator**.  
+   - Standardized input scaling (128x128 resolution).  
+
+2️⃣ **Model Training** 🏋️  
+   - Tested **CNN, VGG16, InceptionResNetV2, and ResNet50**.  
+   - **ResNet50** selected as best performer due to stability and high **AUC-ROC**.  
+
+3️⃣ **SHAP-based Explainability** 📊  
+   - Highlights important features in images influencing the model’s decision.  
+   - **Pink = high impact regions, Blue = low impact regions** in classification.  
+
+4️⃣ **Performance Metrics** 📈  
+   - **Accuracy, Recall, AUC-ROC, Loss Analysis**.  
+   - ResNet50 achieved **highest stability and credibility**.  
+
+---
+
+## 📊 Results
+
+| Model | Accuracy | AUC-ROC | Recall |
+|--------|---------|--------|--------|
+| CNN | 91.70% | 91.93% | 53.87% |
+| **VGG16** | **93.64%** | **94.73%** | **82.41%** |
+| InceptionResNetV2 | 92.52% | 91.93% | 65.60% |
+| **ResNet50 (Best)** | **90.21%** | **91.09%** | **38.55%** |
+
+**🔹 ResNet50** was the most stable model with **high credibility** when tested using **SHAP analysis**.
+
+---
+
+## 📌 Future Enhancements
+
+🔹 **Continuous model updates** with real-world data.  
+🔹 **Advanced augmentation techniques** for better dataset diversity.  
+🔹 **Ensemble learning** for even higher accuracy.  
+
+---
+
+## 🏆 Acknowledgments
+
+- **SIIM-ISIC** dataset contributors.
+- **Kaggle & TensorFlow** for model references.
+- **SHAP** library for Explainable AI.
