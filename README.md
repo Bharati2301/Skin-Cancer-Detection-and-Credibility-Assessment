@@ -13,55 +13,6 @@ Skin cancer is one of the most prevalent and dangerous types of cancer worldwide
 
 ---
 
-## 💀 Project Structure
-
-```
-💽 skin_cancer_xai
-│-- 📄 README.md
-│-- 📂 dataset                # SIIM-ISIC dataset (after preprocessing)
-│-- 📂 models                 # Saved model weights and architectures
-│-- 📂 notebooks              # Jupyter notebooks for training and evaluation
-│-- 📂 src                    # Source code for model training and evaluation
-│-- 📂 reports                # Detailed research report and findings
-│-- 📂 images                 # Sample dataset images and visualization outputs
-│-- requirements.txt          # Required dependencies
-│-- train.py                  # Model training script
-│-- evaluate.py               # Model evaluation script
-│-- shap_analysis.py          # SHAP-based explainability analysis
-```
-
----
-
-## 🚀 Installation & Setup
-
-### 1️⃣ Clone the repository
-```bash
-git clone https://github.com/infectedhuman/SKIN_CANCER_XAI.git
-cd SKIN_CANCER_XAI
-```
-
-### 2️⃣ Install dependencies
-```bash
-pip install -r requirements.txt
-```
-
-### 3️⃣ Run the model training
-```bash
-python train.py
-```
-
-### 4️⃣ Evaluate the model
-```bash
-python evaluate.py
-```
-
-### 5️⃣ Perform SHAP analysis
-```bash
-python shap_analysis.py
-```
-
----
-
 ## 🔍 Methodology
 
 1️⃣ **Data Preprocessing** 🪚  
